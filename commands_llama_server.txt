@@ -1,0 +1,16 @@
+
+llamacpp compilieren:
+cmake -B build
+cmake --build build --config Release
+
+
+./llama-server --model /Users/Julian/LLM_Models/Gemma/gemma-3-1b-it-q4_0/gemma-3-1b-it-q4_0.gguf --gpu-layers 99 --ctx-size 32000 --top-p 1.0 --port 8090
+
+./llama-server --model /Users/Julian/LLM_Models/Gemma/gemma-3-4b-it-q4_0/gemma-3-4b-it-q4_0.gguf --gpu-layers 99 --ctx-size 16000 --top-p 1.0 --port 8090
+
+
+Test:
+
+curl http://localhost:8000/v1/completions -H "Content-Type: application/json" -H "Authorization: Bearer NONE" -d '{"model": "na", "prompt": "what is your favorite color?", "temperature": 0, "max_tokens": 50}'
+
+curl http://localhost:8000/v1/completions -H "Content-Type: application/json" -H "Authorization: Bearer NONE" -d '{"model": "na", "prompt": "Name four points why I should not trust artificial intelligence.", "temperature": 0.2, "max_tokens": 50}'
