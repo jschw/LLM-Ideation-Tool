@@ -6,43 +6,43 @@ from utils.workflows import LinearWorkflow
 from dotenv import dotenv_values
 
 def main():
-  
 
-  try:
-    if 'initialized' not in st.session_state or not st.session_state.initialized:
-      if 'config' not in st.session_state:
-        st.session_state['config'] = dotenv_values(".env")
-        
-      if 'workflow' not in st.session_state:
-        st.session_state['workflow'] = LinearWorkflow()
-        
-      if 'persistent_text' not in st.session_state:
-        st.session_state['persistent_text'] = ""
+    try:
+        if 'initialized' not in st.session_state or not st.session_state.initialized:
+            
+            if 'config' not in st.session_state:
+                st.session_state['config'] = dotenv_values(".env")
+                
+            if 'workflow' not in st.session_state:
+                st.session_state['workflow'] = LinearWorkflow()
+                
+            if 'persistent_text' not in st.session_state:
+                st.session_state['persistent_text'] = ""
 
-    st.title("Markdown Live viewer")
+            # Load workflow
+            st.session_state['workflow'].read_workflow_file("workflows/workflow_1.json")
 
-    widget = st.empty()
+        st.title("Markdown Live viewer")
+        widget = st.empty()
 
-    while True:
+        while True:
+            new_txt = input("-> ")
 
-      new_txt = input("-> ")
+            if new_txt == "/quit":
+                os.kill(os.getpid(), signal.SIGKILL)
+            
+            elif new_txt == "/clear":
+                st.session_state['persistent_text'] = ""
+                new_txt = ""
+                st.rerun()
 
-      if new_txt == "/quit":
-        os.kill(os.getpid(), signal.SIGKILL)
-      
-      elif new_txt == "/clear":
-        st.session_state['persistent_text'] = ""
-        new_txt = ""
-        st.rerun()
+            st.session_state['persistent_text'] += f"{new_txt}\n\n"
 
-      st.session_state['persistent_text'] += f"{new_txt}\n\n"
+            widget.markdown(st.session_state['persistent_text'])
 
-      widget.markdown(st.session_state['persistent_text'])
-
-    
-  except Exception:
-    print("Error")
-    pass
+    except Exception:
+        print("Error")
+        pass
 
 if __name__ == '__main__':
-  main()
+    main()

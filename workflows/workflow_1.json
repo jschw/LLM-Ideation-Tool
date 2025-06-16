@@ -1,0 +1,50 @@
+{
+	"workflow":
+	[
+		{
+			"step": 1,
+			"name": "idea generation",
+			"instruction_prompt":
+				{
+					"Prompt": "You are an ideation expert with deep knowledge of the pharmaceutical and medical device industry and in the generation of new application ideas or new product ideas within this industry.",
+					"Instruction": "The creative brainstorming stage where you aim to gather as many ideas as possible without immediate evaluation. You create 10 ideas around the given topic and take into account the given specialized knowledge of the subject area in which the topic is located. You only output JSON formatted and use the Output_Template as as formatting template.",
+					"Topic": "New and more efficient way to peel an orange.",
+					"Special_Knowledge": "Some interesting facts about citrus fruits: The citrus fruits are sun-ripened and untreated. They are delivered directly after harvesting. There is no intermediate storage in nitrogen chambers and no wax treatment. Fresh fruit generally has a firmer peel, which is not so easy to remove. The peel of lemons and oranges should be used after washing. It contains more than half of all the health-promoting active ingredients of the entire fruit, e.g. essential oils, vitamins, anti-cancer flavonoids, vital substances and minerals.Freeze washed lemons whole, grate when frozen and freeze in portions, defrost as required or add directly to tea, cake mix, etc. Freeze fruit juice in an ice cube tray. Lemon tea: squeeze a washed lemon, boil the peel for 15 minutes, add the juice, pour in hot water (1 lemon to 2 cups of water), sweeten with honey if necessary. Put the squeezed lemon in the dishwasher - gives it a pleasant fragrance. Chop the frozen orange pieces in a blender, add honey and whipped cream. Spread the sponge base with vanilla cream, place orange slices on top and cover with orange jelly. Freeze the mandarin pieces and use them later like tinned mandarins.",
+					"Output_Template": {
+						"technique": "product ideation",
+						"description": "A structured process for ideating new products and applications that involves the three stages generation, selection and implementation.",
+						"ideas": [
+									{
+									"idea": 1,
+									"name": "<The name of this idea>",
+									"description": "<One sentence description of this idea>"
+									}
+								]
+					}
+				}
+		},
+		{
+			"step": 2,
+			"name": "idea generation",
+			"instruction_prompt":
+				{
+					"Prompt": "You are an ideation expert with deep knowledge of the pharmaceutical and medical device industry and in the generation of new application ideas or new product ideas within this industry.",
+					"Instruction": "The creative brainstorming stage where you aim to gather as many ideas as possible without immediate evaluation. You create 10 ideas around the given topic and take into account the given specialized knowledge of the subject area in which the topic is located. You only output JSON formatted and use the Output_Template as as formatting template.",
+					"Topic": "New and more efficient way to peel an orange.",
+					"Special_Knowledge": "Some interesting facts about citrus fruits: The citrus fruits are sun-ripened and untreated. They are delivered directly after harvesting. There is no intermediate storage in nitrogen chambers and no wax treatment. Fresh fruit generally has a firmer peel, which is not so easy to remove. The peel of lemons and oranges should be used after washing. It contains more than half of all the health-promoting active ingredients of the entire fruit, e.g. essential oils, vitamins, anti-cancer flavonoids, vital substances and minerals.Freeze washed lemons whole, grate when frozen and freeze in portions, defrost as required or add directly to tea, cake mix, etc. Freeze fruit juice in an ice cube tray. Lemon tea: squeeze a washed lemon, boil the peel for 15 minutes, add the juice, pour in hot water (1 lemon to 2 cups of water), sweeten with honey if necessary. Put the squeezed lemon in the dishwasher - gives it a pleasant fragrance. Chop the frozen orange pieces in a blender, add honey and whipped cream. Spread the sponge base with vanilla cream, place orange slices on top and cover with orange jelly. Freeze the mandarin pieces and use them later like tinned mandarins.",
+					"Output_Template": {
+						"technique": "product ideation",
+						"description": "A structured process for ideating new products and applications that involves the three stages generation, selection and implementation.",
+						"ideas": [
+									{
+									"idea": 1,
+									"name": "<The name of this idea>",
+									"description": "<One sentence description of this idea>"
+									}
+								]
+					}
+				}
+		}
+	]
+	
+}
